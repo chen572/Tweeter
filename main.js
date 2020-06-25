@@ -3,6 +3,7 @@ const renderer = Renderer();
 
 renderer.renderPosts(tweeter.getPosts())
 
+// ADDS A POST
 $('#post').click(() => {
     const postText = $('#input').val();
     
@@ -12,6 +13,8 @@ $('#post').click(() => {
     $('#input').val('');
 });
 
+
+// DELETES A POST
 $('#posts').on('click', '.delete', event => {
     const postID = $(event.currentTarget).closest('.post').data().id;
     
@@ -19,6 +22,8 @@ $('#posts').on('click', '.delete', event => {
     renderer.renderPosts(tweeter.getPosts());
 });
 
+
+// ADDS A COMMENT
 $('#posts').on('click', '.post-comment', event => {
     const commentText = $(event.currentTarget).siblings('input').val();
     const postID = $(event.currentTarget).closest('.post').data().id;
@@ -27,6 +32,8 @@ $('#posts').on('click', '.post-comment', event => {
     renderer.renderPosts(tweeter.getPosts());
 });
 
+
+// DELETES A COMMENT
 $('#posts').on('click', '.delete-comment', event => {
     const commentID = $(event.currentTarget).closest('.comments').data().id;
     const postID = $(event.currentTarget).closest('.post').data().id;
