@@ -37,7 +37,7 @@ const Tweeter = () => {
     };
 
     const removePost = postID => {
-        postIdCounter--;
+        // postIdCounter--;
 
         for (let post of _posts) {
             if (post.id == postID) {
@@ -63,7 +63,7 @@ const Tweeter = () => {
     };
 
     const removeComment = (postID, commentID) => {
-        commentIdCounter--;
+        // commentIdCounter--;
 
         for (let post of _posts) {
             if (post.id == postID) {
